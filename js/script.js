@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   DEJURE CORPORATE SOLUTION — script.js
+   Dejure corporate solutions®  — script.js
    Works across index.html · about.html · team.html
                 · practice.html · industries.html
    ═══════════════════════════════════════════════════════ */
@@ -373,3 +373,32 @@ attachFormHandler('contactPageForm');
    CONTACT PAGE  (contact.html)
 ══════════════════════ */
 attachFormHandler('contactPageForm');
+
+
+    const cvInput = document.getElementById('cvInput');
+    const fileLabel = document.getElementById('fileLabel');
+    const fileNameDisplay = document.getElementById('file-name-display');
+
+    cvInput.addEventListener('change', function () {
+      if (this.files && this.files[0]) {
+        const name = this.files[0].name;
+        const size = (this.files[0].size / 1024 / 1024).toFixed(2);
+        fileLabel.textContent = name;
+        fileNameDisplay.style.display = 'block';
+        fileNameDisplay.textContent = '✓ ' + name + ' (' + size + ' MB)';
+      }
+    });
+
+    document.getElementById('CareerssForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));

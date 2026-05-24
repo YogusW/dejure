@@ -8,18 +8,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css" />
+
 </head>
 <body data-page="home">
 
   <div class="grain"></div>
+
+  <!-- DISCLAIMER MODAL -->
+  <div class="disclaimer-overlay" id="disclaimerOverlay" role="dialog" aria-modal="true" aria-labelledby="disclaimerTitle">
+    <div class="disclaimer-modal">
+      <div class="disclaimer-modal-header">
+        <div>
+          <span class="disclaimer-modal-eyebrow">Disclaimer</span>
+        </div>
+      </div>
+      <div class="disclaimer-modal-body">
+        <p>The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing this website, www.dejurecorporatesolutions.com, you acknowledge and confirm that you are seeking information relating to Dejure Corporate Solutions® of your own accord and that there has been no form of solicitation, advertisement or inducement by Dejure Corporate Solutions® or its members. The content of this website is for informational purposes only and should not be interpreted as soliciting or advertisement. No material/information provided on this website should be construed as legal advice. Dejure Corporate Solutions® shall not be liable for consequences of any action taken by relying on the material/information provided on this website. The contents of this website are the intellectual property of Dejure Corporate Solutions®.</p>  
+      </div>
+      <div class="disclaimer-modal-footer">
+        <span class="disclaimer-footer-note">By clicking "I Agree" you confirm that you have read and understood this disclaimer.</span>
+        <button class="disclaimer-agree-btn" id="disclaimerAgreeBtn" onclick="dismissDisclaimer()">I Agree →</button>
+      </div>
+    </div>
+  </div>
 
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html">
         <img src="./assets/images/logo.png" class="nav-logo-img" alt="Dejure logo" />
-        <span class="logo-h">D</span>
-        <span class="logo-full">ejure Corporate solutions® </span>
+        <span class="logo-full">Dejure Corporate Solutions® </span>
       </a>
       <ul class="nav-links">
         <li><a href="index.html"   class="nav-link active">Home</a></li>
@@ -42,7 +60,7 @@
       <a href="industries.html"  class="mob-link">Industries Served</a>
       <a href="careers.html"   class="mob-link">Careers</a>
       <a href="contact.html"     class="mob-link">Contact Us</a>
-</div>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -54,9 +72,6 @@
       <h6 class="hero-initiative reveal reveal-delay-1">
         <em>Kapur's Initiative</em>
       </h6>
-      <!-- <h3 class="hero-difference reveal reveal-delay-1">
-        Law firm with a difference
-      </h3> -->
       <p class="hero-desc reveal reveal-delay-2">
         Dejure corporate solutions®  delivers seasoned legal counsel and strategic solutions across corporate, litigation, and regulatory matters.
       </p>
@@ -101,7 +116,7 @@
     </div>
   </section>
 
-  <!--PRACTICE AREAS -->
+  <!-- PRACTICE AREAS -->
   <section class="section practice-section" id="practice">
     <div class="container-wide">
       <div class="section-header reveal">
@@ -149,7 +164,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════ WHY CHOOSE US ══════════════════ -->
+  <!-- WHY CHOOSE US -->
   <section class="section why-section">
     <div class="container-wide">
       <div class="section-header reveal">
@@ -193,87 +208,76 @@
     </div>
   </section>
 
-  <!-- ══════════════════ INDUSTRIES ══════════════════ -->
+  <!-- INDUSTRIES -->
   <section class="section industries-section">
-  <div class="container-wide">
- 
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Sectors We Serve</span>
-      <h2 class="section-heading">Industries <em>Served</em></h2>
-      <p class="section-sub">Sector-specific knowledge across seven major verticals of the Indian economy.</p>
+    <div class="container-wide">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Sectors We Serve</span>
+        <h2 class="section-heading">Industries <em>Served</em></h2>
+        <p class="section-sub">Sector-specific knowledge across seven major verticals of the Indian economy.</p>
+      </div>
+      <div class="ind-new-wrap reveal">
+        <a href="industries.html#it-sector" class="ind-new-row">
+          <span class="ind-new-num">01</span>
+          <div class="ind-new-body">
+            <span class="ind-new-name">IT Sector</span>
+            <span class="ind-new-tag">Technology &amp; Digital</span>
+          </div>
+          <span class="ind-new-arrow">→</span>
+        </a>
+        <a href="industries.html#health-medical" class="ind-new-row">
+          <span class="ind-new-num">02</span>
+          <div class="ind-new-body">
+            <span class="ind-new-name">Healthcare &amp; Medical Sector</span>
+            <span class="ind-new-tag">Life Sciences</span>
+          </div>
+          <span class="ind-new-arrow">→</span>
+        </a>
+        <a href="industries.html#fmcg" class="ind-new-row">
+          <span class="ind-new-num">03</span>
+          <div class="ind-new-body">
+            <span class="ind-new-name">FMCG</span>
+            <span class="ind-new-tag">Consumer Goods</span>
+          </div>
+          <span class="ind-new-arrow">→</span>
+        </a>
+        <a href="industries.html#real-estate" class="ind-new-row">
+          <span class="ind-new-num">04</span>
+          <div class="ind-new-body">
+            <span class="ind-new-name">Real Estate</span>
+            <span class="ind-new-tag">Property &amp; Infrastructure</span>
+          </div>
+          <span class="ind-new-arrow">→</span>
+        </a>
+        <a href="industries.html#food-hospitality" class="ind-new-row">
+          <span class="ind-new-num">05</span>
+          <div class="ind-new-body">
+            <span class="ind-new-name">Food &amp; Hospitality</span>
+            <span class="ind-new-tag">Food, Beverage &amp; Hotels</span>
+          </div>
+          <span class="ind-new-arrow">→</span>
+        </a>
+        <a href="industries.html#financial" class="ind-new-row">
+          <span class="ind-new-num">06</span>
+          <div class="ind-new-body">
+            <span class="ind-new-name">Engagement with Financial Institutions</span>
+            <span class="ind-new-tag">Banking &amp; Finance</span>
+          </div>
+          <span class="ind-new-arrow">→</span>
+        </a>
+        <a href="industries.html#cosmetics" class="ind-new-row">
+          <span class="ind-new-num">07</span>
+          <div class="ind-new-body">
+            <span class="ind-new-name">Cosmetic Industries</span>
+            <span class="ind-new-tag">Beauty &amp; Personal Care</span>
+          </div>
+          <span class="ind-new-arrow">→</span>
+        </a>
+      </div>
     </div>
- 
-    <div class="ind-new-wrap reveal">
- 
-      <a href="industries.html#it-sector" class="ind-new-row">
-        <span class="ind-new-num">01</span>
-        <div class="ind-new-body">
-          <span class="ind-new-name">IT Sector</span>
-          <span class="ind-new-tag">Technology &amp; Digital</span>
-        </div>
-        <span class="ind-new-arrow">→</span>
-      </a>
- 
-      <a href="industries.html#health-medical" class="ind-new-row">
-        <span class="ind-new-num">02</span>
-        <div class="ind-new-body">
-          <span class="ind-new-name">Healthcare &amp; Medical Sector</span>
-          <span class="ind-new-tag">Life Sciences</span>
-        </div>
-        <span class="ind-new-arrow">→</span>
-      </a>
- 
-      <a href="industries.html#fmcg" class="ind-new-row">
-        <span class="ind-new-num">03</span>
-        <div class="ind-new-body">
-          <span class="ind-new-name">FMCG</span>
-          <span class="ind-new-tag">Consumer Goods</span>
-        </div>
-        <span class="ind-new-arrow">→</span>
-      </a>
- 
-      <a href="industries.html#real-estate" class="ind-new-row">
-        <span class="ind-new-num">04</span>
-        <div class="ind-new-body">
-          <span class="ind-new-name">Real Estate</span>
-          <span class="ind-new-tag">Property &amp; Infrastructure</span>
-        </div>
-        <span class="ind-new-arrow">→</span>
-      </a>
- 
-      <a href="industries.html#food-hospitality" class="ind-new-row">
-        <span class="ind-new-num">05</span>
-        <div class="ind-new-body">
-          <span class="ind-new-name">Food &amp; Hospitality</span>
-          <span class="ind-new-tag">Food, Beverage &amp; Hotels</span>
-        </div>
-        <span class="ind-new-arrow">→</span>
-      </a>
- 
-      <a href="industries.html#financial" class="ind-new-row">
-        <span class="ind-new-num">06</span>
-        <div class="ind-new-body">
-          <span class="ind-new-name">Engagement with Financial Institutions</span>
-          <span class="ind-new-tag">Banking &amp; Finance</span>
-        </div>
-        <span class="ind-new-arrow">→</span>
-      </a>
- 
-      <a href="industries.html#cosmetics" class="ind-new-row">
-        <span class="ind-new-num">07</span>
-        <div class="ind-new-body">
-          <span class="ind-new-name">Cosmetic Industries</span>
-          <span class="ind-new-tag">Beauty &amp; Personal Care</span>
-        </div>
-        <span class="ind-new-arrow">→</span>
-      </a>
- 
-    </div><!-- /ind-new-wrap -->
- 
-  </div>
-</section>
+  </section>
 
-  <!-- ══════════════════ SERVICES ══════════════════ -->
+  <!-- SERVICES -->
   <section class="section services-section">
     <div class="container-wide">
       <div class="services-box reveal">
@@ -314,7 +318,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════ CORE TEAM PREVIEW ══════════════════ -->
+  <!-- CORE TEAM PREVIEW -->
   <section class="section team-section">
     <div class="container-wide">
       <div class="section-header reveal">
@@ -360,7 +364,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════ TESTIMONIAL ══════════════════ -->
+  <!-- TESTIMONIAL -->
   <section class="testimonial-section">
     <div class="container-wide">
       <div class="testimonial-inner reveal">
@@ -376,7 +380,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <!-- CONTACT -->
   <section class="section contact-section" id="contact">
     <div class="container-wide">
       <div class="contact-inner">
@@ -482,7 +486,7 @@
         <div class="footer-links-col">
           <h4>Contact</h4>
           <ul>
-            <li><a><Address>T-1902 Plumeria Garden Estate, Omicron III, Greater Noida, 201310</Address></a></li>
+            <li><a><address>T-1902 Plumeria Garden Estate, Omicron III, Greater Noida, 201310</address></a></li>
             <li><a>+91 9810954609</a></li>
             <li><a>servicedesk@dejurecorporatesolutions.com</a></li>
             <li><a href="https://www.instagram.com/dejurecorporate">Instagram</a></li>
@@ -490,12 +494,29 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 Dejure corporate solutions® s. All rights reserved.</span>
+        <span>© 2025 Dejure corporate solutions®. All rights reserved.</span>
         <span>Privacy Policy · Terms of Use</span>
       </div>
     </div>
   </footer>
 
+  <style>
+    /* grain sits BELOW the disclaimer modal */
+    
+  </style>
   <script src="./js/script.js"></script>
+  <script>
+    // Disclaimer — runs only on index.html where the overlay exists
+    var overlay = document.getElementById('disclaimerOverlay');
+    if (overlay) {
+      if (sessionStorage.getItem('disclaimerSeen') === '1') {
+        overlay.style.display = 'none';
+      }
+      window.dismissDisclaimer = function () {
+        sessionStorage.setItem('disclaimerSeen', '1');
+        overlay.style.display = 'none';
+      };
+    }
+  </script>
 </body>
 </html>

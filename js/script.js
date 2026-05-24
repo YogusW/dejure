@@ -241,6 +241,7 @@ function attachFormHandler(formId) {
 attachFormHandler('contactForm');
 attachFormHandler('aboutContactForm');
 attachFormHandler('practiceContactForm');
+attachFormHandler('contactPageForm');
 
 
 /* ══════════════════════
@@ -323,7 +324,6 @@ if (currentPage === 'industries') {
     if (el) sectorObserver.observe(el);
   });
 
-  // Fade sidebar out when contact section enters view
   const contactSection = document.getElementById('contact');
   if (contactSection && sidebar) {
     const contactObserver = new IntersectionObserver((entries) => {
@@ -362,43 +362,45 @@ if (currentPage === 'practice') {
   }
 }
 
+
 /* ══════════════════════
-   CONTACT PAGE — contact.html
-   Attach form handler for the full contact page form
+   CAREERS FORM (careers.html)
 ══════════════════════ */
-attachFormHandler('contactPageForm');
- 
- 
-/* ══════════════════════
-   CONTACT PAGE  (contact.html)
-══════════════════════ */
-attachFormHandler('contactPageForm');
-
-
-    const cvInput = document.getElementById('cvInput');
-    const fileLabel = document.getElementById('fileLabel');
-    const fileNameDisplay = document.getElementById('file-name-display');
-
-    cvInput.addEventListener('change', function () {
-      if (this.files && this.files[0]) {
-        const name = this.files[0].name;
-        const size = (this.files[0].size / 1024 / 1024).toFixed(2);
-        fileLabel.textContent = name;
+const cvInput = document.getElementById('cvInput');
+if (cvInput) {
+  const fileLabel      = document.getElementById('fileLabel');
+  const fileNameDisplay = document.getElementById('file-name-display');
+  cvInput.addEventListener('change', function () {
+    if (this.files && this.files[0]) {
+      const name = this.files[0].name;
+      const size = (this.files[0].size / 1024 / 1024).toFixed(2);
+      if (fileLabel)      fileLabel.textContent = name;
+      if (fileNameDisplay) {
         fileNameDisplay.style.display = 'block';
-        fileNameDisplay.textContent = '✓ ' + name + ' (' + size + ' MB)';
+        fileNameDisplay.textContent   = '✓ ' + name + ' (' + size + ' MB)';
       }
-    });
+    }
+  });
+}
 
-    document.getElementById('CareerssForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      this.style.display = 'none';
-      document.getElementById('formSuccess').classList.add('show');
-    });
+const careersForm = document.getElementById('careersForm');
+if (careersForm) {
+  careersForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    const success = document.getElementById('formSuccess');
+    if (success) success.classList.add('show');
+  });
+}
 
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.08 });
-    reveals.forEach(el => observer.observe(el));
+// Disclaimer — runs on every page
+var overlay = document.getElementById('disclaimerOverlay');
+if (overlay) {
+  if (sessionStorage.getItem('disclaimerSeen') === '1') {
+    overlay.style.display = 'none';
+  }
+  window.dismissDisclaimer = function () {
+    sessionStorage.setItem('disclaimerSeen', '1');
+    overlay.style.display = 'none';
+  };
+}

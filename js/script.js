@@ -391,26 +391,6 @@ if (currentPage === 'practice') {
 }
 
 
-/* ══════════════════════
-   career FORM (career.html)
-══════════════════════ */
-const cvInput = document.getElementById('cvInput');
-if (cvInput) {
-  const fileLabel      = document.getElementById('fileLabel');
-  const fileNameDisplay = document.getElementById('file-name-display');
-  cvInput.addEventListener('change', function () {
-    if (this.files && this.files[0]) {
-      const name = this.files[0].name;
-      const size = (this.files[0].size / 1024 / 1024).toFixed(2);
-      if (fileLabel)      fileLabel.textContent = name;
-      if (fileNameDisplay) {
-        fileNameDisplay.style.display = 'block';
-        fileNameDisplay.textContent   = '✓ ' + name + ' (' + size + ' MB)';
-      }
-    }
-  });
-}
-
 // Disclaimer — runs on every page
 var overlay = document.getElementById('disclaimerOverlay');
 if (overlay) {

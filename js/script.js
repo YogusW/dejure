@@ -411,16 +411,6 @@ if (cvInput) {
   });
 }
 
-const careerForm = document.getElementById('careerForm');
-if (careerForm) {
-  careerForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    this.style.display = 'none';
-    const success = document.getElementById('formSuccess');
-    if (success) success.classList.add('show');
-  });
-}
-
 // Disclaimer — runs on every page
 var overlay = document.getElementById('disclaimerOverlay');
 if (overlay) {
@@ -443,3 +433,48 @@ var overlay = document.getElementById('disclaimerOverlay');
       overlay.style.display = 'none';
     };
   }
+
+  /* ══════════════════════
+   CAREERS FORM — Web3Forms AJAX, stay on page
+══════════════════════ */
+const careersForm = document.getElementById('careersForm');
+if (careersForm) {
+  careersForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn          = careersForm.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+
+    btn.textContent   = 'Submitting…';
+    btn.disabled      = true;
+    btn.style.opacity = '0.7';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(careersForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Hide form, show success message
+        careersForm.style.display = 'none';
+        const success = document.getElementById('formSuccess');
+        if (success) success.classList.add('show');
+      } else {
+        btn.textContent   = 'Something went wrong — try again';
+        btn.disabled      = false;
+        btn.style.opacity = '';
+        setTimeout(() => { btn.textContent = originalText; }, 3000);
+      }
+
+    } catch (err) {
+      btn.textContent   = 'Network error — try again';
+      btn.disabled      = false;
+      btn.style.opacity = '';
+      setTimeout(() => { btn.textContent = originalText; }, 3000);
+    }
+  });
+}

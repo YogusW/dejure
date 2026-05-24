@@ -398,11 +398,23 @@ if (overlay) {
     overlay.style.display = 'none';
   }
   window.dismissDisclaimer = function () {
+    // Send to Web3Forms
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        access_key: "717895f3-a571-4424-87f3-5f4b9abc66a6",
+        subject: "Disclaimer Accepted — Dejure Corporate Solutions",
+        event: "Disclaimer Accepted",
+        time: new Date().toISOString(),
+        page: window.location.href
+      })
+    });
+
     sessionStorage.setItem('disclaimerSeen', '1');
     overlay.style.display = 'none';
   };
 }
-
   /* ══════════════════════
    CAREERS FORM — Web3Forms AJAX, stay on page
 ══════════════════════ */

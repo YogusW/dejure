@@ -203,17 +203,66 @@ document.querySelectorAll('.tp-card, .ft-card').forEach(card => {
 /* ══════════════════════
    CONTACT FORM SUBMIT — loading state only, let Formspree handle submit
 ══════════════════════ */
+/* ══════════════════════
+   CONTACT FORM SUBMIT — AJAX, stay on page
+══════════════════════ */
 function attachFormHandler(formId) {
   const form = document.getElementById(formId);
   if (!form) return;
 
-  // Only show loading state — do NOT preventDefault
-  form.addEventListener('submit', () => {
-    const btn = form.querySelector('button[type="submit"]');
-    if (btn) {
-      btn.textContent   = 'Sending…';
-      btn.disabled      = true;
-      btn.style.opacity = '0.7';
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn          = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+
+    btn.textContent   = 'Sending…';
+    btn.disabled      = true;
+    btn.style.opacity = '0.7';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Success
+        btn.textContent      = '✓ Enquiry Received';
+        btn.style.background = '#8a2d2d';
+        form.reset();
+
+        let successMsg = form.querySelector('.form-success');
+        if (!successMsg) {
+          successMsg           = document.createElement('p');
+          successMsg.className = 'form-success';
+          form.appendChild(successMsg);
+        }
+        successMsg.textContent = 'Thank you for your enquiry. Our team will be in touch within one business day.';
+        successMsg.classList.add('show');
+
+        setTimeout(() => {
+          btn.textContent      = originalText;
+          btn.disabled         = false;
+          btn.style.opacity    = '';
+          btn.style.background = '';
+          successMsg.classList.remove('show');
+        }, 5000);
+
+      } else {
+        // Formspree returned an error
+        btn.textContent  = 'Something went wrong';
+        btn.disabled     = false;
+        btn.style.opacity = '';
+        setTimeout(() => { btn.textContent = originalText; }, 3000);
+      }
+
+    } catch (err) {
+      btn.textContent   = 'Network error — try again';
+      btn.disabled      = false;
+      btn.style.opacity = '';
+      setTimeout(() => { btn.textContent = originalText; }, 3000);
     }
   });
 }

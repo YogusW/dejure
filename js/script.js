@@ -403,17 +403,6 @@ if (overlay) {
   };
 }
 
-var overlay = document.getElementById('disclaimerOverlay');
-  if (overlay) {
-    if (sessionStorage.getItem('disclaimerSeen') === '1') {
-      overlay.style.display = 'none';
-    }
-    window.dismissDisclaimer = function () {
-      sessionStorage.setItem('disclaimerSeen', '1');
-      overlay.style.display = 'none';
-    };
-  }
-
   /* ══════════════════════
    CAREERS FORM — Web3Forms AJAX, stay on page
 ══════════════════════ */

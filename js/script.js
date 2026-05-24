@@ -200,41 +200,21 @@ document.querySelectorAll('.tp-card, .ft-card').forEach(card => {
 /* ══════════════════════
    CONTACT FORM SUBMIT — generic handler
 ══════════════════════ */
+/* ══════════════════════
+   CONTACT FORM SUBMIT — loading state only, let Formspree handle submit
+══════════════════════ */
 function attachFormHandler(formId) {
   const form = document.getElementById(formId);
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn          = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-
-    btn.textContent   = 'Sending…';
-    btn.disabled      = true;
-    btn.style.opacity = '0.7';
-
-    setTimeout(() => {
-      btn.textContent      = '✓ Enquiry Received';
-      btn.style.background = '#8a2d2d';
-
-      let successMsg = form.querySelector('.form-success');
-      if (!successMsg) {
-        successMsg             = document.createElement('p');
-        successMsg.className   = 'form-success';
-        successMsg.textContent = 'Thank you for your enquiry. Our team will be in touch within one business day.';
-        form.appendChild(successMsg);
-      }
-      successMsg.classList.add('show');
-
-      setTimeout(() => {
-        form.reset();
-        btn.textContent      = originalText;
-        btn.disabled         = false;
-        btn.style.opacity    = '';
-        btn.style.background = '';
-        successMsg.classList.remove('show');
-      }, 4000);
-    }, 1200);
+  // Only show loading state — do NOT preventDefault
+  form.addEventListener('submit', () => {
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.textContent   = 'Sending…';
+      btn.disabled      = true;
+      btn.style.opacity = '0.7';
+    }
   });
 }
 
@@ -242,7 +222,6 @@ attachFormHandler('contactForm');
 attachFormHandler('aboutContactForm');
 attachFormHandler('practiceContactForm');
 attachFormHandler('contactPageForm');
-
 
 /* ══════════════════════
    SCROLL-BASED NAV HIGHLIGHT (index.html)

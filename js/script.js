@@ -478,3 +478,39 @@ if (careersForm) {
     }
   });
 }
+
+/* ══════════════════════
+   CV FILE SIZE CHECK
+══════════════════════ */
+const cvInput = document.getElementById('cvInput');
+if (cvInput) {
+  const fileLabel       = document.getElementById('fileLabel');
+  const fileNameDisplay = document.getElementById('file-name-display');
+
+  cvInput.addEventListener('change', function () {
+    if (this.files && this.files[0]) {
+      const file = this.files[0];
+      const sizeMB = file.size / 1024 / 1024;
+
+      if (sizeMB > 10) {
+        // File too large — clear it and warn user
+        this.value = '';
+        if (fileLabel) fileLabel.textContent = 'Choose file to upload';
+        if (fileNameDisplay) {
+          fileNameDisplay.style.display = 'block';
+          fileNameDisplay.style.color   = '#b63e3d';
+          fileNameDisplay.textContent   = '✗ File too large. Maximum size is 10MB.';
+        }
+        return;
+      }
+
+      // File is fine
+      if (fileLabel) fileLabel.textContent = file.name;
+      if (fileNameDisplay) {
+        fileNameDisplay.style.display = 'block';
+        fileNameDisplay.style.color   = '#b63e3d';
+        fileNameDisplay.textContent   = '✓ ' + file.name + ' (' + sizeMB.toFixed(2) + ' MB)';
+      }
+    }
+  });
+}

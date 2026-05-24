@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Team — Dejure corporate solutions® </title>
+  <title>Our Team — Dejure Corporate Solutions® </title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -45,7 +45,7 @@
         <li><a href="team.html"        class="nav-link active">Our Team</a></li>
         <li><a href="practice.html"    class="nav-link">Practice Areas</a></li>
         <li><a href="industries.html"  class="nav-link">Industries Served</a></li>
-        <li><a href="careers.html"  class="nav-link">Careers</a></li>
+        <li><a href="career.html"  class="nav-link">career</a></li>
         <li><a href="contact.html"     class="nav-link">Contact Us</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -58,7 +58,7 @@
       <a href="team.html"        class="mob-link">Our Team</a>
       <a href="practice.html"    class="mob-link">Practice Areas</a>
       <a href="industries.html"  class="mob-link">Industries Served</a>
-      <a href="careers.html"   class="mob-link">Careers</a>
+      <a href="career.html"   class="mob-link">career</a>
       <a href="contact.html"     class="mob-link">Contact Us</a>
     </div>
   </nav>
@@ -77,72 +77,82 @@
 
   <!-- FULL TEAM GRID -->
   <section class="full-team-section">
-    <div class="container-wide">
-      <div class="team-preview-grid reveal">
+    <!-- FULL TEAM GRID — replace the existing team-preview-grid div -->
+<div class="pyramid-grid reveal">
 
-        <div class="tp-card">
-          <div class="tp-photo">
-            <img src="./assets/images/anil.jpg.jpeg" alt="Anil Kapur" class="tp-member-img">
-          </div>
-          <div class="tp-info">
-            <h3>Adv Anil Kapur</h3>
-            <span class="tp-role">Founder</span>
-            <div class="tp-edu">BSc · LLB · MBA · ACIM</div>
-          </div>
-        </div>
-        <div class="tp-card">
-          <div class="tp-photo tp-photo--mehroon">
-            <img src="./assets/images/ajay.jpg.jpeg" alt="Ajay Gupta" class="tp-member-img">
-          </div>
-          <div class="tp-info">
-            <h3>Adv Ajay Gupta</h3>
-            <span class="tp-role">Partner</span>
-            <div class="tp-edu">LLB · PG Diploma in Corporate Law & Management (ILI)</div>
-          </div>
-        </div>
-        <div class="tp-card">
-          <div class="tp-photo tp-photo--beige">
-            <img src="./assets/images/tajinder.jpg.jpeg" alt="Taljinder K Joshi" class="tp-member-img">
-          </div>
-          <div class="tp-info">
-            <h3>Adv. Tajender K Joshi</h3>
-            <span class="tp-role">Partner</span>
-            <div class="tp-edu">BCom · LLB</div>
-          </div>
-        </div>
-        <div class="tp-card">
-          <div class="tp-photo tp-photo--beige">
-            <img src="./assets/images/addy.jpg.jpeg" alt="Aditya Kapur" class="tp-member-img">
-          </div>
-          <div class="tp-info">
-            <h3>Adv. Aditya Kapur</h3>
-            <span class="tp-role">Legal Advocate</span>
-            <div class="tp-edu">B.B.A LL.B · Post Bacc. HR</div>
-          </div>
-        </div>
-
-        <div class="tp-card">
-          <div class="tp-photo tp-photo--beige">
-            <img src="./assets/images/ananya.jpg.jpeg" alt="Ananya Kapur" class="tp-member-img">
-          </div>
-          <div class="tp-info">
-            <h3>Adv. Ananya Kapur</h3>
-            <span class="tp-role">Legal Advocate</span>
-            <div class="tp-edu">B.B.A LL.B</div>
-          </div>
-        </div>
-        <div class="tp-card">
-          <div class="tp-photo tp-photo--beige">
-            <img src="./assets/images/vanshu.jpg.jpeg" alt="Vanshu Kapur" class="tp-member-img">
-          </div>
-          <div class="tp-info">
-            <h3>Adv. Vanshu Kapur</h3>
-            <span class="tp-role">Legal Advocate</span>
-            <div class="tp-edu">B.B.A LL.B</div>
-          </div>
-        </div>
+  <!-- Row 1: 1 card -->
+  <div class="pyramid-row pyramid-row-1">
+    <div class="tp-card">
+      <div class="tp-photo">
+        <img src="./assets/images/anil.jpg.jpeg" alt="Anil Kapur" class="tp-member-img">
+      </div>
+      <div class="tp-info">
+        <h3>Adv. Anil Kapur</h3>
+        <span class="tp-role">Founder</span>
+        <div class="tp-edu">BSc · LLB · MBA · ACIM</div>
       </div>
     </div>
+  </div>
+
+  <!-- Row 2: 2 cards -->
+  <div class="pyramid-row pyramid-row-2">
+    <div class="tp-card">
+      <div class="tp-photo tp-photo--mehroon">
+        <img src="./assets/images/ajay.jpg.jpeg" alt="Ajay Gupta" class="tp-member-img">
+      </div>
+      <div class="tp-info">
+        <h3>Adv. Ajay Gupta</h3>
+        <span class="tp-role">Partner</span>
+        <div class="tp-edu">LLB · PG Diploma in Corporate Law & Management (ILI)</div>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-photo tp-photo--beige">
+        <img src="./assets/images/tajinder.jpg.jpeg" alt="Tajender K Joshi" class="tp-member-img">
+      </div>
+      <div class="tp-info">
+        <h3>Adv. Tajender K Joshi</h3>
+        <span class="tp-role">Partner</span>
+        <div class="tp-edu">BCom · LLB</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: 3 cards -->
+  <div class="pyramid-row pyramid-row-3">
+    <div class="tp-card">
+      <div class="tp-photo tp-photo--beige">
+        <img src="./assets/images/addy.jpg.jpeg" alt="Aditya Kapur" class="tp-member-img">
+      </div>
+      <div class="tp-info">
+        <h3>Adv. Aditya Kapur</h3>
+        <span class="tp-role">Legal Associate</span>
+        <div class="tp-edu">B.B.A LL.B · Post Bacc. HR</div>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-photo tp-photo--beige">
+        <img src="./assets/images/ananya.jpg.jpeg" alt="Ananya Kapur" class="tp-member-img">
+      </div>
+      <div class="tp-info">
+        <h3>Adv. Ananya Kapur</h3>
+        <span class="tp-role">Legal Associate</span>
+        <div class="tp-edu">B.B.A LL.B</div>
+      </div>
+    </div>
+    <div class="tp-card">
+      <div class="tp-photo tp-photo--beige">
+        <img src="./assets/images/vanshu.jpg.jpeg" alt="Vanshu Kapur" class="tp-member-img">
+      </div>
+      <div class="tp-info">
+        <h3>Adv. Vanshu Kapur</h3>
+        <span class="tp-role">Legal Associate</span>
+        <div class="tp-edu">B.B.A LL.B</div>
+      </div>
+    </div>
+  </div>
+
+</div>
   </section>
 <!-- ══════════════════ CONTACT ══════════════════ -->
   <section class="section contact-section" id="contact">
@@ -156,6 +166,10 @@
             <div class="cd-item">
               <span class="cd-label">New Delhi</span>
               <span class="cd-val">T-1902 Plumeria Garden Estate, Omicron III, Greater Noida, 201310</span>
+              <span class="cd-label">Chandigarh</span>
+              <span class="cd-val">Kothi No. 1186, Block B , Sector 5, Ecocity 1, New Chandigarh 140901, Sas Nagar Mohali</span>
+              <span class="cd-label">Bangalore</span>
+              <span class="cd-val">#4 (old no. 15/3), 1st Main Road, Jedahalli, 5th block, Next to Madduramma temple, Rajajinagar, Bengaluru, Karnataka 560010</span>
             </div>
             <div class="cd-item">
               <span class="cd-label">Phone</span>
@@ -243,7 +257,7 @@
             <li><a href="team.html">Our Team</a></li>
             <li><a href="practice.html">Practice Areas</a></li>
             <li><a href="industries.html">Industries Served</a></li>
-            <li><a href="Careers.html">Careers</a></li>
+            <li><a href="career.html">Career</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
@@ -258,7 +272,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 Dejure corporate solutions® s. All rights reserved.</span>
+        <span>© 2025 Dejure Corporate Solutions® s. All rights reserved.</span>
         <span>Privacy Policy · Terms of Use</span>
       </div>
     </div>

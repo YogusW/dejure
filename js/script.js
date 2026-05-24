@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   Dejure corporate solutions®  — script.js
+   Dejure Corporate Solutions®  — script.js
    Works across index.html · about.html · team.html
                 · practice.html · industries.html
    ═══════════════════════════════════════════════════════ */
@@ -364,7 +364,7 @@ if (currentPage === 'practice') {
 
 
 /* ══════════════════════
-   CAREERS FORM (careers.html)
+   career FORM (career.html)
 ══════════════════════ */
 const cvInput = document.getElementById('cvInput');
 if (cvInput) {
@@ -383,9 +383,9 @@ if (cvInput) {
   });
 }
 
-const careersForm = document.getElementById('careersForm');
-if (careersForm) {
-  careersForm.addEventListener('submit', function (e) {
+const careerForm = document.getElementById('careerForm');
+if (careerForm) {
+  careerForm.addEventListener('submit', function (e) {
     e.preventDefault();
     this.style.display = 'none';
     const success = document.getElementById('formSuccess');

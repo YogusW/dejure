@@ -159,105 +159,115 @@
         </div>
 
         <!-- RIGHT: Form -->
-        <div class="reveal reveal-delay-1">
-          <form class="careers-form" id="careersForm">
+<div class="reveal reveal-delay-1">
+  <form class="careers-form" id="careersForm"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        enctype="multipart/form-data">
 
-            <div class="careers-form-row">
-              <div class="form-group">
-                <label>Your Name *</label>
-                <input type="text" name="name" placeholder="Full name" required />
-              </div>
-              <div class="form-group">
-                <label>Your Email *</label>
-                <input type="email" name="email" placeholder="you@example.com" required />
-              </div>
-            </div>
+    <!-- Web3Forms hidden fields -->
+    <input type="hidden" name="access_key" value="4062dcb4-7da0-4c40-8ab6-b6340f92485b"/>
+    <input type="hidden" name="subject" value="New Career Application — Dejure Corporate Solutions" />
+    <input type="hidden" name="from_name" value="Dejure Careers" />
+    <input type="hidden" name="redirect" value="https://www.dejurecorporatesolutions.com/career.html" />
 
-            <div class="careers-form-row">
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" name="phone" placeholder="+91 98765 43210" />
-              </div>
-              <div class="form-group">
-                <label>Select Location *</label>
-                <div class="select-wrap">
-                  <select name="location" required>
-                    <option value="">Select Location</option>
-                    <option>New Delhi</option>
-                    <option>Greater Noida</option>
-                    <option>Open to Relocation</option>
-                  </select>
-                  <span class="select-arrow">↓</span>
-                </div>
-              </div>
-            </div>
+    <div class="careers-form-row">
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" name="name" placeholder="Full name" required />
+      </div>
+      <div class="form-group">
+        <label>Your Email *</label>
+        <input type="email" name="email" placeholder="you@example.com" required />
+      </div>
+    </div>
 
-            <div class="form-group">
-              <label>College / University Name</label>
-              <input type="text" name="college" placeholder="Enter your College / University name" />
-            </div>
-
-            <div class="careers-form-row">
-              <div class="form-group">
-                <label>Year of Study</label>
-                <div class="select-wrap">
-                  <select name="year_of_study">
-                    <option value="">Select Year of Study</option>
-                    <option>1st Year (LLB / BA LLB)</option>
-                    <option>2nd Year</option>
-                    <option>3rd Year</option>
-                    <option>4th Year</option>
-                    <option>5th Year</option>
-                    <option>LLM / Post Graduate</option>
-                    <option>Not Currently Enrolled</option>
-                  </select>
-                  <span class="select-arrow">↓</span>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Position Applying For *</label>
-                <div class="select-wrap">
-                  <select name="position" required>
-                    <option value="">Select Position</option>
-                    <option>Legal Associate</option>
-                    <option>Legal Intern</option>
-                  </select>
-                  <span class="select-arrow">↓</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- CV Upload -->
-            <div class="file-upload-group">
-              <label>Your CV *</label>
-              <span class="file-upload-note">Maximum file size 25MB · PDF or DOCX preferred</span>
-              <div class="file-upload-box" id="fileDropZone">
-                <input type="file" id="cvInput" name="cv" accept=".pdf,.doc,.docx" />
-                <div class="file-upload-icon">📎</div>
-                <div class="file-upload-text">
-                  <span id="fileLabel">Choose file to upload</span>
-                  <small>PDF, DOC, DOCX — max 25MB</small>
-                </div>
-                <span class="file-upload-btn">Browse</span>
-              </div>
-              <span id="file-name-display"></span>
-            </div>
-
-            <div class="form-group">
-              <label>Cover Note</label>
-              <textarea name="cover_note" rows="3" placeholder="Briefly tell us why you'd like to join Dejure…"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full">Submit Application →</button>
-            <p class="form-note">Submitting this form does not constitute an offer of employment. All information shared is strictly confidential.</p>
-          </form>
-
-          <div class="form-success-careers" id="formSuccess">
-            <div class="fsc-icon">✓</div>
-            <h4>Application Received</h4>
-            <p>Thank you for your interest in Dejure. Our team will review your application and reach out within 5 working days.</p>
-          </div>
+    <div class="careers-form-row">
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="+91 98765 43210" />
+      </div>
+      <div class="form-group">
+        <label>Select Location *</label>
+        <div class="select-wrap">
+          <select name="location" required>
+            <option value="">Select Location</option>
+            <option>New Delhi</option>
+            <option>Greater Noida</option>
+            <option>Open to Relocation</option>
+          </select>
+          <span class="select-arrow">↓</span>
         </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>College / University Name</label>
+      <input type="text" name="college" placeholder="Enter your College / University name" />
+    </div>
+
+    <div class="careers-form-row">
+      <div class="form-group">
+        <label>Year of Study</label>
+        <div class="select-wrap">
+          <select name="year_of_study">
+            <option value="">Select Year of Study</option>
+            <option>1st Year (LLB / BA LLB)</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+            <option>5th Year</option>
+            <option>LLM / Post Graduate</option>
+            <option>Not Currently Enrolled</option>
+          </select>
+          <span class="select-arrow">↓</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Position Applying For *</label>
+        <div class="select-wrap">
+          <select name="position" required>
+            <option value="">Select Position</option>
+            <option>Legal Associate</option>
+            <option>Legal Intern</option>
+          </select>
+          <span class="select-arrow">↓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CV Upload -->
+    <div class="file-upload-group">
+      <label>Your CV *</label>
+      <span class="file-upload-note">Maximum file size 25MB · PDF or DOCX preferred</span>
+      <div class="file-upload-box" id="fileDropZone">
+        <input type="file" id="cvInput" name="attachment" accept=".pdf,.doc,.docx" required />
+        <div class="file-upload-icon">📎</div>
+        <div class="file-upload-text">
+          <span id="fileLabel">Choose file to upload</span>
+          <small>PDF, DOC, DOCX — max 25MB</small>
+        </div>
+        <span class="file-upload-btn">Browse</span>
+      </div>
+      <span id="file-name-display"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Cover Note</label>
+      <textarea name="cover_note" rows="3" 
+                placeholder="Briefly tell us why you'd like to join Dejure…"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-full">Submit Application →</button>
+    <p class="form-note">Submitting this form does not constitute an offer of employment. All information shared is strictly confidential.</p>
+  </form>
+
+  <div class="form-success-careers" id="formSuccess">
+    <div class="fsc-icon">✓</div>
+    <h4>Application Received</h4>
+    <p>Thank you for your interest in Dejure. Our team will review your application and reach out within 5 working days.</p>
+  </div>
+</div>
 
       </div>
     </div>

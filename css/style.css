@@ -3601,3 +3601,56 @@ html, body {
 .footer-links-col ul li + li {
   margin-top: 16px;
 }
+
+/* ── Hero logo image mobile fix ── */
+@media (max-width: 768px) {
+  .hero-pen {
+    width: 55px;
+  }
+
+  .hero-logo-title {
+    margin-left: 0 !important;
+  }
+
+  .hero-title-group {
+    padding-top: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-pen {
+    width: 44px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+}
+
+/* ── Hero logo mobile clip fix ── */
+@media (max-width: 768px) {
+  .hero-logo-title {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .hero-pen {
+    width: 48px !important;
+    flex-shrink: 0;
+  }
+
+  .hero {
+    overflow: hidden !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .hero-left {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+}

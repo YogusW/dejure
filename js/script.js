@@ -404,3 +404,14 @@ if (overlay) {
     overlay.style.display = 'none';
   };
 }
+
+var overlay = document.getElementById('disclaimerOverlay');
+  if (overlay) {
+    if (sessionStorage.getItem('disclaimerSeen') === '1') {
+      overlay.style.display = 'none';
+    }
+    window.dismissDisclaimer = function () {
+      sessionStorage.setItem('disclaimerSeen', '1');
+      overlay.style.display = 'none';
+    };
+  }

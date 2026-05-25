@@ -3654,3 +3654,45 @@ html, body {
     overflow: hidden !important;
   }
 }
+
+.careers-cv-note {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: var(--cream-deeper);
+      border: 1.5px dashed rgba(28,28,28,0.15);
+      border-radius: 4px;
+    }
+    .careers-cv-note-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .careers-cv-note strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 5px;
+    }
+    .careers-cv-note span {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .careers-cv-note a {
+      color: var(--mehroon);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .careers-cv-note em {
+      font-family: 'DM Sans', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--charcoal);
+    }

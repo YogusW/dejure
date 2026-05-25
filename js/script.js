@@ -459,39 +459,45 @@ if (careersForm) {
     }
   });
 }
+ /* ══════════════════════════════════════════
+       CAREERS FORM — Web3Forms AJAX, stay on page
+    ══════════════════════════════════════════ */
+    (function () {
+      const form = document.getElementById('careersForm');
+      if (!form) return;
 
-/* ══════════════════════
-   CV FILE SIZE CHECK
-══════════════════════ */
-const cvInput = document.getElementById('cvInput');
-if (cvInput) {
-  const fileLabel       = document.getElementById('fileLabel');
-  const fileNameDisplay = document.getElementById('file-name-display');
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
 
-  cvInput.addEventListener('change', function () {
-    if (this.files && this.files[0]) {
-      const file = this.files[0];
-      const sizeMB = file.size / 1024 / 1024;
+        btn.textContent   = 'Submitting…';
+        btn.disabled      = true;
+        btn.style.opacity = '0.7';
 
-      if (sizeMB > 10) {
-        // File too large — clear it and warn user
-        this.value = '';
-        if (fileLabel) fileLabel.textContent = 'Choose file to upload';
-        if (fileNameDisplay) {
-          fileNameDisplay.style.display = 'block';
-          fileNameDisplay.style.color   = '#b63e3d';
-          fileNameDisplay.textContent   = '✗ File too large. Maximum size is 10MB.';
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method:  'POST',
+            body:    new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          const data = await response.json();
+
+          if (data.success) {
+            form.style.display = 'none';
+            const success = document.getElementById('formSuccess');
+            if (success) success.classList.add('show');
+          } else {
+            btn.textContent   = 'Something went wrong — try again';
+            btn.disabled      = false;
+            btn.style.opacity = '';
+            setTimeout(() => { btn.textContent = originalText; }, 3000);
+          }
+        } catch (err) {
+          btn.textContent   = 'Network error — try again';
+          btn.disabled      = false;
+          btn.style.opacity = '';
+          setTimeout(() => { btn.textContent = originalText; }, 3000);
         }
-        return;
-      }
-
-      // File is fine
-      if (fileLabel) fileLabel.textContent = file.name;
-      if (fileNameDisplay) {
-        fileNameDisplay.style.display = 'block';
-        fileNameDisplay.style.color   = '#b63e3d';
-        fileNameDisplay.textContent   = '✓ ' + file.name + ' (' + sizeMB.toFixed(2) + ' MB)';
-      }
-    }
-  });
-}
+      });
+    })();
